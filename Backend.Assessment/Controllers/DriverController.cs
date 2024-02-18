@@ -59,7 +59,7 @@ namespace Backend.Assessment.Controllers
         /// <returns>Created Driver</returns>
         [HttpPost]
         [Route("Create")]
-        public async Task<ActionResult<Driver>> CreateDriver(CreateDriverViewModel createDriver)
+        public async Task<ActionResult<Driver>> CreateDriver([FromBody]CreateDriverViewModel createDriver)
         {
             _logger.LogInformation("Access Create New Driver");
             var driver = _mapper.Map<Driver>(createDriver);
@@ -84,7 +84,7 @@ namespace Backend.Assessment.Controllers
         /// <returns>Updatetd Driver</returns>
         [HttpPut]
         [Route("Update")]
-        public async Task<ActionResult<Driver>> UpdateDriver(UpdateDriverViewModel updateDriver)
+        public async Task<ActionResult<Driver>> UpdateDriver([FromBody]UpdateDriverViewModel updateDriver)
         {
             _logger.LogInformation("Access Update Existed Driver");
             var driver = _mapper.Map<Driver>(updateDriver);
